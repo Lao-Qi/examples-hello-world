@@ -1,5 +1,83 @@
-# Vue 3 + TypeScript + Vite
+# 批发订单管理系统
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 项目介绍
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+这是一个基于 Vue 3 + TypeScript + Vite 开发的批发订单管理系统，主要用于管理配件、SKU 和订单。
+
+### 主要功能
+
+- **配件管理**：添加、编辑、删除配件，支持图片上传和压缩
+- **SKU 管理**：创建 SKU，选择配件组合和数量
+- **订单管理**：创建订单，选择 SKU 和额外配件
+- **订单详情**：查看订单详情，确认配件是否齐全，标记订单完成状态
+- **搜索功能**：在三个管理页面都支持模糊搜索
+- **响应式设计**：适配桌面端和移动端
+
+## 技术栈
+
+- **前端框架**：Vue 3 + TypeScript
+- **构建工具**：Vite
+- **状态管理**：Pinia
+- **路由管理**：Vue Router
+- **样式方案**：Unocss
+- **代码规范**：ESLint
+- **数据存储**：LocalStorage
+
+## 项目结构
+
+```
+├── src/
+│   ├── views/            # 页面组件
+│   │   ├── PartsManagementView.vue    # 配件管理页面
+│   │   ├── SkuManagementView.vue      # SKU 管理页面
+│   │   ├── OrderManagementView.vue   # 订单管理页面
+│   │   └── OrderDetailView.vue       # 订单详情页面
+│   ├── router/           # 路由配置
+│   ├── main.ts           # 入口文件
+│   └── App.vue           # 根组件
+├── public/               # 静态资源
+├── index.html            # HTML 模板
+├── package.json          # 项目配置
+└── vite.config.ts        # Vite 配置
+```
+
+## 安装和运行
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式运行
+
+```bash
+npm run dev
+```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+## 使用说明
+
+1. **配件管理**：点击左侧导航栏的「配件管理」，可以添加、编辑、删除配件，上传配件图片
+2. **SKU 管理**：点击左侧导航栏的「SKU 管理」，可以创建 SKU，选择配件组合
+3. **订单管理**：点击左侧导航栏的「订单管理」，可以创建订单，选择 SKU 和额外配件
+4. **订单详情**：在订单列表中点击「查看详情」，可以查看订单详情，确认配件是否齐全，标记订单完成
+
+## 项目特色
+
+- **响应式设计**：适配不同屏幕尺寸
+- **图片压缩**：上传配件图片时自动压缩到 100kb 以内
+- **模糊搜索**：支持在管理页面快速搜索
+- **本地存储**：使用 LocalStorage 存储数据，无需后端服务
+- **TypeScript 支持**：提供类型安全
+
+## 注意事项
+
+- 本项目使用 LocalStorage 存储数据，刷新页面后数据会保留，但清除浏览器缓存后数据会丢失
+- 图片上传功能会自动压缩图片，确保图片大小不超过 100kb
+- 订单编辑后会自动重置为未完成状态，需要重新确认
